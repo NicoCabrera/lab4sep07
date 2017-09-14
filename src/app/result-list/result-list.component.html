@@ -1,0 +1,21 @@
+<!-- Crear una lista y usar un ngFor mostrando en nombre del juego, el nombre del jugador, si gano o perdio-->
+<div class="container">
+  <button (click)="viewResultsList()" class="btn btn-primary btn-lg btn-block">{{buttonMessage}} ultimos resultados</button>
+  <table class="table table-striped" *ngIf="viewResultData">
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Juego</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let game of results">
+        <td>{{game.player}}</td>
+        <td>{{game.name}}</td>
+        <td *ngIf="game.win">Ganó</td>
+        <td *ngIf="!game.win">Perdió</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

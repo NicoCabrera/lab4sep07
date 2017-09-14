@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="form-group">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" (click)="generate()">Generar un nuevo número</button>
+      </span>
+      <input class="form-control" placeholder="Ingresa un número del 1 al 10" [(ngModel)]='game.userNumber'>
+    </div>
+    <button (click)="verify()" class="btn btn-primary btn-lg btn-block">Verificar</button>
+
+    <div [hidden]="hideMessage">
+      <div [hidden]="!win" class="alert alert-success" role="alert">
+        Ganaste!
+      </div>
+      <div [hidden]="win" class="alert alert-danger" role="alert">
+        Perdiste
+      </div>
+    </div>
+  </div>
+</div>
